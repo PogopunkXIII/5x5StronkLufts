@@ -4,5 +4,4 @@ import java.util.ArrayList;
 
 public class Workout {
     ArrayList<Exercise> exercises;
-
 }
