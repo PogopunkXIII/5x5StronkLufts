@@ -3,7 +3,7 @@ package bitbois.com.a5x5stronklufts;
 public class Exercise {
     private double startingWeight, weightIncrement;
     private int exIndex;
-    private String exerciseName;
+    private String exerciseName, setRepString;
     private Weights curWeight;
 
     public Exercise() {
@@ -65,5 +65,13 @@ public class Exercise {
 
     public void setCurWeight(Weights curWeight) {
         this.curWeight = curWeight;
+    }
+
+    public void setSetRepString(String setRepsString) {
+        this.setRepString = setRepsString;
+    }
+
+    public String getSetRepString() {
+        return setRepString;
     }
 }
