@@ -90,5 +90,47 @@ public class Trainee {
         indexes.add(new Integer(rowIndex));
         indexes.add(new Integer(overheadPressIndex));
         indexes.add(new Integer(deadliftIndex));
+
+        return indexes;
+    }
+
+    public int getSquatIndex() {
+        return squatIndex;
+    }
+
+    public void setSquatIndex(int squatIndex) {
+        this.squatIndex = squatIndex;
+    }
+
+    public int getBenchPressIndex() {
+        return benchPressIndex;
+    }
+
+    public void setBenchPressIndex(int benchPressIndex) {
+        this.benchPressIndex = benchPressIndex;
+    }
+
+    public int getRowIndex() {
+        return rowIndex;
+    }
+
+    public void setRowIndex(int rowIndex) {
+        this.rowIndex = rowIndex;
+    }
+
+    public int getOverheadPressIndex() {
+        return overheadPressIndex;
+    }
+
+    public void setOverheadPressIndex(int overheadPressIndex) {
+        this.overheadPressIndex = overheadPressIndex;
+    }
+
+    public int getDeadliftIndex() {
+        return deadliftIndex;
+    }
+
+    public void setDeadliftIndex(int deadliftIndex) {
+        this.deadliftIndex = deadliftIndex;
     }
 }
