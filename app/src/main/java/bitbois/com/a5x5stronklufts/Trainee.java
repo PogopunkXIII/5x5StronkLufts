@@ -94,6 +94,14 @@ public class Trainee {
         return indexes;
     }
 
+    public ArrayList<Exercise> getWorkoutA() {
+        return workoutA;
+    }
+
+    public ArrayList<Exercise> getWorkoutB() {
+        return workoutB;
+    }
+
     public int getSquatIndex() {
         return squatIndex;
     }

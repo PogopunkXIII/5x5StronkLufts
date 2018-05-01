@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import static android.app.PendingIntent.getActivity;
+
 public class MainActivity extends AppCompatActivity {
     MainActivityPresenter map;
     TextView lift1Name, lift1SetReps, lift1Weight;
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        map = new MainActivityPresenter(this);
+        map = new MainActivityPresenter(this, this.getPreferences(this.MODE_PRIVATE));
 
         map.loadTrainee();
 
