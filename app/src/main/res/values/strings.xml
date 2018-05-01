@@ -4,9 +4,9 @@
     <string name="details_label">Details</string>
     <string name="next_workout_label">Next Workout</string>
     <string name="squat_index">squat_index_pref</string>
-    <string name="next_workout_label">Next Workout</string>
-    <string name="next_workout_label">Next Workout</string>
-    <string name="next_workout_label">Next Workout</string>
-    <string name="next_workout_label">Next Workout</string>
-    <string name="next_workout_label">Next Workout</string>
+    <string name="bench_press_index">bench_press_index_pref</string>
+    <string name="barbell_row_index">barbell_row_index_pref</string>
+    <string name="overhead_press_index">overhead_press_index_pref</string>
+    <string name="deadlift_index">deadlift_index_pref</string>
+    <string name="is_workout_a_index">is_workout_a_index_pref</string>
 </resources>

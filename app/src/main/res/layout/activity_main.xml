@@ -34,10 +34,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text="@string/at_symbol"
         app:layout_constraintStart_toEndOf="@+id/lift1SetReps"
-        tools:layout_editor_absoluteY="43dp"
-        tools:text="@string/at_symbol" />
+        app:layout_constraintTop_toBottomOf="@+id/lift1Name" />
 
     <TextView
         android:id="@+id/lift1Weight"
@@ -47,10 +47,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="lift1Weight"
-        app:layout_constraintEnd_toStartOf="@+id/lift1Deets"
+        app:layout_constraintEnd_toStartOf="@+id/lift1Reset"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lift1Name" />
 
     <ImageButton
         android:id="@+id/lift1Complete"
@@ -59,6 +60,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="liftCompleted"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_done_black_24dp" />
@@ -70,11 +72,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
-        android:text="lift1Deets"
+        android:onClick="liftDetails"
+        android:text="@string/details_label"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/lift1Complete"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/details_label" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/lift2Name"
@@ -104,10 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text="@string/at_symbol"
         app:layout_constraintStart_toEndOf="@+id/lift2SetReps"
-        tools:layout_editor_absoluteY="112dp"
-        tools:text="@string/at_symbol" />
+        app:layout_constraintTop_toBottomOf="@+id/lift2Name" />
 
     <TextView
         android:id="@+id/lift2Weight"
@@ -117,10 +119,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="lift2Weight"
-        app:layout_constraintEnd_toStartOf="@+id/lift2Deets"
+        app:layout_constraintEnd_toStartOf="@+id/lift2Reset"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        tools:layout_editor_absoluteY="112dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lift2Name" />
 
     <ImageButton
         android:id="@+id/lift2Complete"
@@ -128,9 +131,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="liftCompleted"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_done_black_24dp"
-        tools:layout_editor_absoluteY="85dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lift1Complete"
+        app:srcCompat="@drawable/ic_done_black_24dp" />
 
     <Button
         android:id="@+id/lift2Deets"
@@ -138,11 +143,12 @@
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="lift2Deets"
+        android:layout_marginTop="16dp"
+        android:onClick="liftDetails"
+        android:text="@string/details_label"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/lift2Complete"
-        tools:layout_editor_absoluteY="85dp"
-        tools:text="@string/details_label" />
+        app:layout_constraintTop_toBottomOf="@+id/lift1Deets" />
 
     <TextView
         android:id="@+id/lift3Name"
@@ -172,10 +178,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text="@string/at_symbol"
         app:layout_constraintStart_toEndOf="@+id/lift3SetReps"
-        tools:layout_editor_absoluteY="181dp"
-        tools:text="@string/at_symbol" />
+        app:layout_constraintTop_toBottomOf="@+id/lift3Name" />
 
     <TextView
         android:id="@+id/lift3Weight"
@@ -185,10 +191,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="lift3Weight"
-        app:layout_constraintEnd_toStartOf="@+id/lift3Deets"
+        app:layout_constraintEnd_toStartOf="@+id/lift3Reset"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lift3Name" />
 
     <ImageButton
         android:id="@+id/lift3Complete"
@@ -196,9 +203,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="liftCompleted"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_done_black_24dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lift2Complete"
+        app:srcCompat="@drawable/ic_done_black_24dp" />
 
     <Button
         android:id="@+id/lift3Deets"
@@ -206,10 +215,11 @@
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="lift3Deets"
+        android:layout_marginTop="16dp"
+        android:onClick="liftDetails"
+        android:text="@string/details_label"
         app:layout_constraintEnd_toStartOf="@+id/lift3Complete"
-        tools:layout_editor_absoluteY="154dp"
-        tools:text="@string/details_label" />
+        app:layout_constraintTop_toBottomOf="@+id/lift2Deets" />
 
     <Button
         android:id="@+id/button6"
@@ -218,9 +228,45 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="nextWorkoutButton"
+        android:onClick="nextWorkout"
+        android:text="@string/next_workout_label"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:text="@string/next_workout_label" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/lift1Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="liftReset"
+        app:layout_constraintEnd_toStartOf="@+id/lift1Deets"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_replay_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/lift2Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="liftReset"
+        app:layout_constraintEnd_toStartOf="@+id/lift2Deets"
+        app:layout_constraintTop_toBottomOf="@+id/lift1Reset"
+        app:srcCompat="@drawable/ic_replay_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/lift3Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:onClick="liftReset"
+        app:layout_constraintEnd_toStartOf="@+id/lift3Deets"
+        app:layout_constraintTop_toBottomOf="@+id/lift2Reset"
+        app:srcCompat="@drawable/ic_replay_black_24dp" />
 
 </android.support.constraint.ConstraintLayout>

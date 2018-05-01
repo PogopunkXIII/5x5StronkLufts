@@ -77,7 +77,7 @@ public class Trainee {
                 .name("Deadlift")
                 .setReps("1x5")
                 .startWeight(95.0)
-                .weightInc(5.0)
+                .weightInc(10.0)
                 .index(deadliftIndex)
                 .build());
     }
@@ -108,6 +108,10 @@ public class Trainee {
 
     public void setSquatIndex(int squatIndex) {
         this.squatIndex = squatIndex;
+        workoutA.get(0).setExIndex(squatIndex);
+        workoutA.get(0).calculateCurWeight();
+        workoutB.get(0).setExIndex(squatIndex);
+        workoutB.get(0).calculateCurWeight();
     }
 
     public int getBenchPressIndex() {
@@ -116,6 +120,8 @@ public class Trainee {
 
     public void setBenchPressIndex(int benchPressIndex) {
         this.benchPressIndex = benchPressIndex;
+        workoutA.get(1).setExIndex(benchPressIndex);
+        workoutA.get(1).calculateCurWeight();
     }
 
     public int getRowIndex() {
@@ -124,6 +130,8 @@ public class Trainee {
 
     public void setRowIndex(int rowIndex) {
         this.rowIndex = rowIndex;
+        workoutA.get(2).setExIndex(rowIndex);
+        workoutA.get(2).calculateCurWeight();
     }
 
     public int getOverheadPressIndex() {
@@ -132,6 +140,8 @@ public class Trainee {
 
     public void setOverheadPressIndex(int overheadPressIndex) {
         this.overheadPressIndex = overheadPressIndex;
+        workoutB.get(1).setExIndex(overheadPressIndex);
+        workoutB.get(1).calculateCurWeight();
     }
 
     public int getDeadliftIndex() {
@@ -140,5 +150,15 @@ public class Trainee {
 
     public void setDeadliftIndex(int deadliftIndex) {
         this.deadliftIndex = deadliftIndex;
+        workoutB.get(2).setExIndex(deadliftIndex);
+        workoutB.get(2).calculateCurWeight();
+    }
+
+    public void setIndexes(ArrayList<Integer> indexes) {
+        this.setSquatIndex(indexes.get(0).intValue());
+        this.setBenchPressIndex(indexes.get(1).intValue());
+        this.setRowIndex(indexes.get(2).intValue());
+        this.setOverheadPressIndex(indexes.get(3).intValue());
+        this.setDeadliftIndex(indexes.get(4).intValue());
     }
 }

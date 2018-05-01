@@ -1,8 +1,13 @@
 package bitbois.com.a5x5stronklufts;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static android.app.PendingIntent.getActivity;
@@ -12,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     TextView lift1Name, lift1SetReps, lift1Weight;
     TextView lift2Name, lift2SetReps, lift2Weight;
     TextView lift3Name, lift3SetReps, lift3Weight;
+    ImageButton lift1Complete, lift2Complete, lift3Complete;
+    ImageButton lift1Reset, lift2Reset, lift3Reset;
 
 
     @Override
@@ -19,33 +26,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.lift1Name    = findViewById(R.id.lift1Name);
+        this.lift1SetReps = findViewById(R.id.lift1SetReps);
+        this.lift1Weight  = findViewById(R.id.lift1Weight);
+
+        this.lift2Name    = findViewById(R.id.lift2Name);
+        this.lift2SetReps = findViewById(R.id.lift2SetReps);
+        this.lift2Weight = findViewById(R.id.lift2Weight);
+
+        this.lift3Name    = findViewById(R.id.lift3Name);
+        this.lift3SetReps = findViewById(R.id.lift3SetReps);
+        this.lift3Weight  = findViewById(R.id.lift3Weight);
+
+        this.lift1Complete = findViewById(R.id.lift1Complete);
+        this.lift2Complete = findViewById(R.id.lift2Complete);
+        this.lift3Complete = findViewById(R.id.lift3Complete);
+
+        this.lift1Reset = findViewById(R.id.lift1Reset);
+        this.lift2Reset = findViewById(R.id.lift2Reset);
+        this.lift3Reset = findViewById(R.id.lift3Reset);
+
         map = new MainActivityPresenter(this, this.getPreferences(this.MODE_PRIVATE));
-
-        map.loadTrainee();
-
-        this.lift1Name    = (TextView)findViewById(R.id.lift1Name);
-        this.lift1SetReps = (TextView)findViewById(R.id.lift1SetReps);
-        this.lift1Weight  = (TextView)findViewById(R.id.lift1Weight);
-
-        this.lift2Name    = (TextView)findViewById(R.id.lift2Name);
-        this.lift2SetReps = (TextView)findViewById(R.id.lift2SetReps);
-        this.lift2SetReps = (TextView)findViewById(R.id.lift2Weight);
-
-        this.lift3Name    = (TextView)findViewById(R.id.lift3Name);
-        this.lift3SetReps = (TextView)findViewById(R.id.lift3SetReps);
-        this.lift3Weight  = (TextView)findViewById(R.id.lift3Weight);
+        int i = 0;
     }
 
     public void liftCompleted(View v) {
         switch(v.getId()){
             case R.id.lift1Complete:
-                this.map.indexLift1();
+                this.map.indexLift(0);
+                this.lift1Complete.setBackgroundColor(0xFF66BB6A);
                 break;
             case R.id.lift2Complete:
-                this.map.indexLift2();
+                this.map.indexLift(1);
+                this.lift2Complete.setBackgroundColor(0xFF66BB6A);
                 break;
             case R.id.lift3Complete:
-                this.map.indexLift3();
+                this.map.indexLift(2);
+                this.lift3Complete.setBackgroundColor(0xFF66BB6A);
                 break;
         }
     }
@@ -53,18 +70,41 @@ public class MainActivity extends AppCompatActivity {
     public void liftDetails(View v) {
         switch(v.getId()){
             case R.id.lift1Deets:
-                this.map.showLift1Deets();
+                this.map.showLiftDeets(0);
                 break;
             case R.id.lift2Deets:
-                this.map.showLift2Deets();
+                this.map.showLiftDeets(1);
                 break;
             case R.id.lift3Deets:
-                this.map.showLift3Deets();
+                this.map.showLiftDeets(2);
+                break;
+        }
+    }
+
+    public void liftReset(View v) {
+        switch(v.getId()){
+            case R.id.lift1Reset:
+                this.map.resetLift(0);
+                this.lift1Reset.setBackgroundColor(0xFFEF5350);
+                break;
+            case R.id.lift2Reset:
+                this.map.resetLift(1);
+                this.lift2Reset.setBackgroundColor(0xFFEF5350);
+                break;
+            case R.id.lift3Reset:
+                this.map.resetLift(2);
+                this.lift3Reset.setBackgroundColor(0xFFEF5350);
                 break;
         }
     }
 
     public void nextWorkout(View v) {
+        this.lift1Complete.setBackgroundColor(Color.LTGRAY);
+        this.lift2Complete.setBackgroundColor(Color.LTGRAY);
+        this.lift3Complete.setBackgroundColor(Color.LTGRAY);
+        this.lift1Reset.setBackgroundColor(Color.LTGRAY);
+        this.lift2Reset.setBackgroundColor(Color.LTGRAY);
+        this.lift3Reset.setBackgroundColor(Color.LTGRAY);
         this.map.nextWorkout();
     }
 

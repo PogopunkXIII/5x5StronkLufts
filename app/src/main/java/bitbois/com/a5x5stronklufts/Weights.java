@@ -23,23 +23,23 @@ public class Weights {
 
         while(tempWeight > 0) {
 
-            if(tempWeight > 90.0) {
+            if(tempWeight >= 90.0) {
                 tempWeight -= 90.0;
                 num45s += 2;
             }
-            else if(tempWeight > 50.0) {
+            else if(tempWeight >= 50.0) {
                 tempWeight -= 50.0;
                 num25s += 2;
             }
-            else if(tempWeight > 20.0) {
+            else if(tempWeight >= 20.0) {
                 tempWeight -= 20.0;
                 num10s += 2;
             }
-            else if(tempWeight > 10.0) {
+            else if(tempWeight >= 10.0) {
                 tempWeight -= 10.0;
                 num5s += 2;
             }
-            else if(tempWeight > 5.0) {
+            else if(tempWeight >= 5.0) {
                 tempWeight -= 5.0;
                 num2point5s += 2;
             }
@@ -54,34 +54,38 @@ public class Weights {
     public String toString() {
         StringBuilder weightString = new StringBuilder();
 
-        weightString.append("Total Weight: " + Double.toString(roundToHalf(weight)));
+        weightString.append("\nTotal Weight: " + Double.toString(roundToHalf(weight)));
+
+        if(this.getWeight() >= 45.0) {
+            weightString.append("\n1 Standard 45lbs Barbell");
+        }
 
         if(this.getWeight() > 45.0) {
-            weightString.append("\n1 Standard 45lbs Barbell with:");
+            weightString.append(" with:");
         }
 
         if(this.getNum45s() > 0) {
-            weightString.append("\n\tNumber of  45s on each side: " + Double.toString(num45s));
+            weightString.append("\nNumber of 45s on each side: " + Integer.toString(num45s/2));
         }
 
         if(this.getNum25s() > 0) {
-            weightString.append("\n\tNumber of  25s: " + Double.toString(num25s));
+            weightString.append("\nNumber of 25s on each side: " + Integer.toString(num25s/2));
         }
 
         if(this.getNum10s() > 0) {
-            weightString.append("\n\tNumber of  10s: " + Double.toString(num10s));
+            weightString.append("\nNumber of 10s on each side: " + Integer.toString(num10s/2));
         }
 
         if(this.getNum5s() > 0) {
-            weightString.append("\n\tNumber of   5s: " + Double.toString(num5s));
+            weightString.append("\nNumber of 5s on each side: " + Integer.toString(num5s/2));
         }
 
         if(this.getNum2point5s() > 0) {
-            weightString.append("\n\tNumber of 2.5s: " + Double.toString(num2point5s));
+            weightString.append("\nNumber of 2.5s on each side: " + Integer.toString(num2point5s/2));
         }
 
         if(this.getRemainderWeight() > 0.0) {
-            weightString.append("\n\t  Extra weight not on bar: " + Double.toString(roundToHalf(remainderWeight)));
+            weightString.append("\nExtra weight not on bar: " + Double.toString(roundToHalf(remainderWeight)));
         }
 
         return  weightString.toString();
